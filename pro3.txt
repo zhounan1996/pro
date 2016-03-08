@@ -1,0 +1,29 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int ArraySum(int n,int min,int max)
+{	int *data;
+	data=new int[n];
+	ifstream in("g:\\git\\sj1.txt"); 
+	int sum=0;
+	for(int k=0;in>>data[k],k<n;k++)
+		if(data[k]>=min && data[k]<=max)
+	{sum+=data[k];}
+	return sum;
+}
+
+int main(void)
+{
+	int n;int sum;int max;
+	int min;
+	cout<<"数据长度：";
+	cin>>n;
+	cout<<"数据最小值：";
+	cin>>min;
+	cout<<"数据最大值：";
+	cin>>max;
+	sum=ArraySum(n,min,max);
+	cout<<"数据元素之和："<<sum<<'\n';
+	return 0;
+}

@@ -1,0 +1,16 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main(void)
+{
+	ifstream inf("g:\\git\\sj1.txt"); //假设数据保存在c:\da.txt文件中
+	float data[100]; //用于保存读取出来的数字的数组
+	int i=0;int sum=0;
+	while (inf>>data[i]) 
+		++i;
+	inf.close(); 
+	for(int k=0;k<100;k++)
+	{sum+=data[k];}
+	cout<<"数组元素之和："<<sum<<'\n';
+	return 0;
+}

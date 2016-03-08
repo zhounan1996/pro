@@ -1,0 +1,24 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int ArraySum(int n)
+{	int *data;
+	data=new int[n];
+	ifstream in("g:\\git\\sj1.txt"); 
+	int sum=0;
+	for(int k=0;in>>data[k],k<n;k++)
+	{sum+=data[k];}
+	return sum;
+}
+
+int main(void)
+{
+	int n;int sum;
+	cout<<"数组长度：";
+	cin>>n;
+	sum=ArraySum(n);
+	cout<<"数组元素之和：";
+	cout<<sum<<'\n';
+	return 0;
+}

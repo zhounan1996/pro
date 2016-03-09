@@ -2,28 +2,30 @@
 #include <fstream>
 using namespace std;
 
-int ArraySum(int n,int min,int max)
+int ArraySum(int n)
 {	int *data;
 	data=new int[n];
 	ifstream in("g:\\git\\sj1.txt"); 
 	int sum=0;
 	for(int k=0;in>>data[k],k<n;k++)
-		if(data[k]>=min && data[k]<=max)
 	{sum+=data[k];}
 	return sum;
 }
 
 int main(void)
 {
-	int n;int sum;int max;
-	int min;
-	cout<<"Êı¾İ³¤¶È£º";
-	cin>>n;
-	cout<<"Êı¾İ×îĞ¡Öµ£º";
+	int sum;
+	int min;int max;
+	int a,b,c;
+	cout<<"è¾“å…¥æ•°æ®çš„å¼€å§‹ä½ç½®ï¼š";
 	cin>>min;
-	cout<<"Êı¾İ×î´óÖµ£º";
+	cout<<"è¾“å…¥æ•°æ®çš„ç»“æŸä½ç½®ï¼š";
 	cin>>max;
-	sum=ArraySum(n,min,max);
-	cout<<"Êı¾İÔªËØÖ®ºÍ£º"<<sum<<'\n';
+	a=ArraySum(min-1);
+	b=ArraySum(max-1);
+	c=b-a;
+	cout<<"æ•°æ®é•¿åº¦ï¼š"<<max-min<<'\n';
+	cout<<"æ•°ç»„å…ƒç´ ä¹‹å’Œï¼š";
+	cout<<c<<'\n';
 	return 0;
 }
